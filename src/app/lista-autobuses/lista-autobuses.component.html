@@ -1,1 +1,19 @@
-<p>lista-autobuses works!</p>
+
+<table class="table table-striped">
+  <thead>
+		<tr>
+			<th scope="col">Matrícula</th>
+			<th scope="col">Año fabricación</th>
+		</tr>
+	</thead>
+  <tbody *ngIf="(persistencia.buses.length > 0) else vacio">
+    <tr *ngFor="let bus of persistencia.buses">
+      <th scope="row">{{bus.matricula}}</th>
+      <td>{{bus.a_fabricacion}}</td>
+      <td><button [routerLink]="['/visitas', bus.matricula]"
+      routerLinkActive="router-link-active">Ver</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #vacio><h3>No hay buses</h3></ng-template>

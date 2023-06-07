@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaAutobusesComponent } from './lista-autobuses/lista-autobuses.component';
 import { ListaVisitasAutobusComponent } from './lista-visitas-autobus/lista-visitas-autobus.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SPersistenciaService } from 'src/_servicio/spersistencia.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { ListaVisitasAutobusComponent } from './lista-visitas-autobus/lista-visi
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [SPersistenciaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

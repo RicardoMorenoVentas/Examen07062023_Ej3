@@ -4,7 +4,7 @@ import { ListaAutobusesComponent } from './lista-autobuses/lista-autobuses.compo
 import { ListaVisitasAutobusComponent } from './lista-visitas-autobus/lista-visitas-autobus.component';
 
 const routes: Routes = [{ path: '', component: ListaAutobusesComponent },
-  { path: 'visitas/{id}', component: ListaVisitasAutobusComponent },
+  { path: 'visitas/:matricula', component: ListaVisitasAutobusComponent },
 ];
 
 @NgModule({

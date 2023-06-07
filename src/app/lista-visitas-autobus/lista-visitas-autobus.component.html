@@ -1,1 +1,24 @@
-<p>lista-visitas-autobus works!</p>
+
+<table class="table table-striped">
+  <thead>
+		<tr>
+			<th scope="col">#</th>
+			<th>Fecha de Visita</th>
+			<th>Matricula</th>
+			<th>DNI de Conductor</th>
+			<th>ID de Lugar</th>
+		</tr>
+	</thead>
+  <tbody *ngIf="(persistencia.buses.length > 0) else vacio">
+    <tr *ngFor="let visita of persistencia.visitas">
+      <th scope="row">{{visita.id}}</th>
+      <td>{{visita.f_visita}}</td>
+      <td>{{visita.matricula.matricula}}</td>
+      <td>{{visita.dni.dni}}</td>
+      <td>{{visita.idLugar.idLugar}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #vacio><h3>No hay buses</h3></ng-template>
+
